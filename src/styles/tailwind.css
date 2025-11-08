@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* NUEVA PALETA PASTEL (Real Estate)
+      Inspirada en tonos naturales, calmados y elegantes.
+      Azul suave (confianza), Verde Salvia (naturaleza, calma), Beige (calidez, hogar).
+    */
+
+    /* Core Colors */
+    --color-background: #FDFCF9; /* Blanco cálido / Hueso */
+    --color-foreground: #333B44; /* Gris pizarra oscuro (para texto) */
+    --color-border: #EAE6DC; /* Beige grisáceo muy claro */
+    --color-input: #F1F0EC; /* Un tono más oscuro que el fondo */
+    --color-ring: #607A94; /* Azul pizarra suave */
+    
+    /* Card Colors */
+    --color-card: #FFFFFF; /* Blanco puro */
+    --color-card-foreground: #333B44; /* Gris pizarra oscuro */
+    --color-popover: #FFFFFF; /* Blanco puro */
+    --color-popover-foreground: #333B44; /* Gris pizarra oscuro */
+    
+    /* Muted Colors */
+    --color-muted: #F1F0EC; /* Beige claro */
+    --color-muted-foreground: #6C7A89; /* Gris azulado suave */
+    
+    /* Brand Colors */
+    --color-primary: #607A94; /* Azul pizarra suave (Nuevo principal) */
+    --color-primary-foreground: #FFFFFF; /* Blanco */
+    --color-secondary: #A3B8A5; /* Verde Salvia (Nuevo secundario) */
+    --color-secondary-foreground: #333B44; /* Gris pizarra oscuro (mejor contraste) */
+    
+    /* Accent Colors */
+    --color-accent: #D4C7B0; /* Beige cálido (Nuevo acento) */
+    --color-accent-foreground: #333B44; /* Gris pizarra oscuro */
+    
+    /* Status Colors (Versiones suavizadas) */
+    --color-success: #70A97E; /* Verde suave */
+    --color-success-foreground: #FFFFFF; /* Blanco */
+    --color-warning: #E6C86E; /* Amarillo suave */
+    --color-warning-foreground: #333B44; /* Gris oscuro */
+    --color-error: #D98B8B; /* Rojo terracota suave */
+    --color-error-foreground: #FFFFFF; /* Blanco */
+    --color-destructive: #D98B8B; /* Rojo terracota suave */
+    --color-destructive-foreground: #FFFFFF; /* Blanco */
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    /* Las fuentes que elegiste (Inter y Playfair) son perfectas. */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  .font-playfair {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer components {
+  /* Sombra actualizada para usar el nuevo color primario (más suave) */
+  .luxury-shadow {
+    box-shadow: 0 4px 20px rgba(96, 122, 148, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+  }
+  
+  .luxury-shadow-lg {
+    box-shadow: 0 8px 32px rgba(96, 122, 148, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  
+  .property-card-hover {
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .property-card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .backdrop-luxury {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  /* Gradiente actualizado para usar la nueva paleta pastel */
+  .text-gradient-luxury {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  /* Todas tus animaciones personalizadas están perfectas, no necesitan cambios. */
+  .animate-ken-burns {
+    animation: kenBurns 8s ease-in-out infinite alternate;
+  }
+  
+  @keyframes kenBurns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+  }
+  
+  .animate-pulse-subtle {
+    animation: pulseSubtle 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulseSubtle {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  @keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 300ms ease-out;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+}
