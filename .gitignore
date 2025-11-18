@@ -1,4 +1,20 @@
-# Logs
+# ======================================
+# ENVIRONMENT VARIABLES
+# ======================================
+# Ignorar entornos locales (desarrollo)
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.*.local
+
+# Mantener .env para producción
+!.env
+
+# ======================================
+# LOGS
+# ======================================
 logs
 *.log
 npm-debug.log*
@@ -7,18 +23,36 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# ======================================
+# DEPENDENCIES & BUILD ARTIFACTS
+# ======================================
 node_modules
 dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# Vite cache
+.vite
+
+# ======================================
+# OS FILES
+# ======================================
+.DS_Store
+Thumbs.db
+
+# ======================================
+# EDITOR / IDE FILES
+# ======================================
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# ======================================
+# TESTING
+# ======================================
+coverage
